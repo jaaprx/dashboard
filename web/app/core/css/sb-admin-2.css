@@ -3,7 +3,6 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
 body {
     background-color:white;
     padding:50px 0px 0px 0px;
@@ -18,7 +17,6 @@ body {
     min-height: 568px;
     background-color: #fff;
 }
-
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
@@ -87,8 +85,10 @@ body {
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
-    padding-right: 0;
-    padding-left: 0;
+    width:250px;
+    position:fixed;
+    overflow-y: auto;
+    padding:0;
 }
 
 .sidebar .sidebar-search {

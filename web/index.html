@@ -15,7 +15,7 @@
     <!--<link href="app/vendor/bootstrap/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>-->
     
     <!-- Custom CSS -->
-    <link href="app/framework/css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+    <link href="app/core/css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
 
     <!-- Custom Fonts -->
     <link href="app/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -44,7 +44,7 @@
     <div id="wrapper">
 
         <!-- BEGIN: NAVBAR-HEADER -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -267,7 +267,8 @@
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+              <div class="sidebar-nav navbar-collapse" resizable ng-style="{ height: windowHeight,  minHeight: windowHeight }">
+                {{windowHeight}}
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
@@ -281,16 +282,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#welcome"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                          <a href="#welcome" menuizer><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#" class=""><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#second">Flot Charts</a>
+                                    <a href="#second" menuizer>Flot Charts</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="morris.html" menuizer>Morris.js Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -379,7 +380,7 @@
         
         <!-- BEGIN: PAGE-CONTENT -->
         <div id="page-wrapper">
-            <div class="page" ng-view></div>
+          <div class="page" ng-view></div>
         </div>
         <!-- END: PAGE-CONTENT -->
 
@@ -389,7 +390,7 @@
     
     
 
-    <!-- jQuery -->
+    <!-- jQuery: with IE support? or newer 2.0 without IE support? -->
     <script src="app/vendor/jquery/jquery-1.11.2.min.js" type="text/javascript"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -399,11 +400,12 @@
     <script src="app/vendor/metismenu/metisMenu.min.js" type="text/javascript"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="app/framework/js/sb-admin-2.js" type="text/javascript"></script>
+    <script src="app/core/js/sb-admin-2.js" type="text/javascript"></script>
     
     <!-- Angular -->
 
-    <script src="app/framework/js/app.js" type="text/javascript"></script>
+    <script src="app/core/js/app.js" type="text/javascript"></script>
+    
 </body>
 
 </html>
